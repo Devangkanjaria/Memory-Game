@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+/* Main Container */
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  width: 90%;
+}
+
+/* Title */
+h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Game Info */
+.game-info {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.controls label {
+  font-weight: 400;
+}
+
+.controls select,
+.controls button {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease-in-out;
+}
+
+.controls select {
+  background: #ecf0f1;
+  color: #2c3e50;
+}
+
+.controls button {  
+  background: #e74c3c;
+  color: white;
+}
+
+.controls button:hover {
+  background: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Game Board */
+.game-board {
+  display: grid;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* Card Styles */
+.card {
+  width: 90px;
+  height: 90px;
+  background: #3498db;
+  color: white;
+  font-size: 30px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card.flipped {
+  background: #2ecc71;
+  transform: rotateY(180deg);
+}
+
+/* Responsive Grid */
+@media (max-width: 600px) {
+  .game-board {
+    grid-template-columns: repeat(4, 80px);
+  }
+  .card {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 601px) {
+  .game-board {
+    grid-template-columns: repeat(4, 100px);
+  }
+  .card {
+    width: 100px;
+    height: 100px;
+    font-size: 26px;
+  }
+}
